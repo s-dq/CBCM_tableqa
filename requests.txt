@@ -1,4 +1,4 @@
 jsonlines==4.0.0
 ujson==5.10.0
-paddlepaddle-gpu==2.6.2
+paddlepaddle-gpu==2.6.2.post116
 paddlenlp==2.6.2
