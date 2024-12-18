@@ -1,4 +1,4 @@
-jsonlines 4.0.0
-ujson 5.10.0
-unmpy 1.26.4
+jsonlines==4.0.0
+ujson==5.10.0
+unmpy==1.26.4
 paddlepaddle-gpu==2.6.2
