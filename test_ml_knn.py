@@ -1,9 +1,6 @@
 import json
-import numpy as np
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
-from util.line_corpus import write_open, jsonl_lines
 from collections import defaultdict
 def read_jsonl(file_path):
     data = []
@@ -64,8 +61,6 @@ def get_answer_cells(cell_ids, layout):
 
 qid_to_related_cell_ids = gather_predictions(pred_y,test_id)
 
-print("len(qid_to_related_cell_ids):", len(qid_to_related_cell_ids))
-# load ground truth
 test_tables = json.load(open('./newdata/test_tables.json'))
 test_questions = json.load(open('./newdata/test_questions.json'))
 
@@ -84,31 +79,6 @@ question_num_by_table_types = defaultdict(int)
 exact_match_num_by_table_types = defaultdict(int)
 
 
-def get_answer_type(question, table):
-    if len(question['answer_cell_list']) == 1:
-        return 'single_cell'
-    flag = False
-    for j in range(len(table['cell_ID_matrix'])):
-        if set(question['answer_cell_list']).issubset(table['cell_ID_matrix'][j]):
-            flag = True
-    for j in range(len(table['cell_ID_matrix'][0])):
-        temp = []
-        for k in range(len(table['cell_ID_matrix'])):
-            temp.append(table['cell_ID_matrix'][k][j])
-        if set(question['answer_cell_list']).issubset(temp):
-            flag = True
-    if flag:
-        return 'single_line'
-    else:
-        return 'multi_line'
-
-
-single_cell_right_num = 0
-single_cell_wrong_num = 0
-single_line_right_num = 0
-single_line_wrong_num = 0
-multi_line_right_num = 0
-multi_line_wrong_num = 0
 
 test_pred_results = []
 # compute exact match
@@ -138,34 +108,10 @@ for q_id in q_id_to_test_questions:
     else:
         is_correct = 0
 
-    answer_type = get_answer_type(question, table)
-    if answer_type == 'single_cell':
-        single_cell_right_num += is_correct
-        single_cell_wrong_num += 1 - is_correct
-    if answer_type == 'single_line':
-        single_line_right_num += is_correct
-        single_line_wrong_num += 1 - is_correct
-    if answer_type == 'multi_line':
-        multi_line_right_num += is_correct
-        multi_line_wrong_num += 1 - is_correct
-
     total_exact_match += is_correct
     question_num_by_table_types[table_type] += 1
     exact_match_num_by_table_types[table_type] += is_correct
     item['is_correct'] = is_correct
     test_pred_results.append(item)
-# output overall exact match results
 
 print("total exact match score: ", total_exact_match / total_question_num)
-
-# output exact match results on tables of each types
-index = 2
-for table_type, question_num in question_num_by_table_types.items():
-    print(f"exact match score on {table_type} tables:",
-          exact_match_num_by_table_types[table_type] / question_num_by_table_types[table_type])
-    index += 1
-print(f"exact match score on single_cell tables:",
-      single_cell_right_num / (single_cell_right_num + single_cell_wrong_num))
-print(f"exact match score on single_line tables:",
-      single_line_right_num / (single_line_right_num + single_line_wrong_num))
-print(f"exact match score on multi_line tables:", multi_line_right_num / (multi_line_right_num + multi_line_wrong_num))
