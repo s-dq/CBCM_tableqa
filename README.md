@@ -76,4 +76,4 @@ python test_ml_knn.py
 
 计算实验一方法的文本分类准确率
 
-python test_ml_compare.py
+python test_ml_compare_best.py
