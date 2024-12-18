@@ -3,7 +3,6 @@ import logging
 import numpy as np
 import ujson as json
 from typing import List
-import random
 from paddlenlp.data import Stack, Tuple, Pad
 import glob
 import gzip
@@ -13,14 +12,11 @@ import random
 import os
 import socket
 import time
-from dataclasses import dataclass
 from typing import Optional, Tuple
 import paddle
 import paddle.nn as nn
-import paddle.nn.functional as F
 from paddle import Tensor
 from paddle.nn.layer.layers import in_declarative_mode
-from paddlenlp.layers import Linear as TransposedLinear
 from paddlenlp.utils.env import CONFIG_NAME
 from paddlenlp.transformers import PretrainedModel, register_base_model
 from paddlenlp.transformers.model_outputs import (
