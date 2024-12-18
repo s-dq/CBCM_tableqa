@@ -17,15 +17,15 @@ train_y=[]
 train_id=[]
 for i in range(len(train)) :
     train_x.append(train[i]['embedding'])
-    train_y.append(train[i]['lable'])
-    train_id.append(train[i]['id'])
+    train_y.append(train[i][0]['lable'])
+    train_id.append(train[i][0]['id'])
 test_x=[]
 test_y=[]
 test_id=[]
 for i in range(len(test)) :
     test_x.append(test[i]['embedding'])
-    test_y.append(test[i]['lable'])
-    test_id.append(test[i]['id'])
+    test_y.append(test[i][0]['lable'])
+    test_id.append(test[i][0]['id'])
 
 clf = KNeighborsClassifier(n_neighbors=2)
 clf.fit(train_x, train_y)
