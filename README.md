@@ -21,6 +21,7 @@ gunzip ./IM-TQA-main/TQA_code/datasets/IM_TQA/train_cols.jsonl.gz
 gunzip ./IM-TQA-main/TQA_code/datasets/IM_TQA/train_rows.jsonl.gz
 
 1.2预处理
+
 复制im-tqa数据集，运行：cp -r ./IM-TQA-main/data  ./data
 
 构建新的数据集，运行：python data_to_newdata.py
@@ -30,6 +31,7 @@ gunzip ./IM-TQA-main/TQA_code/datasets/IM_TQA/train_rows.jsonl.gz
 新数据集到实验训练数据集，运行：python newdata_to_traindata.py
 
 二、实验一
+
 设置python环境
 
 export PYTHONPATH=/home/jupyter-sdq/AAF/IM-TQA-main/TQA_code/
@@ -48,4 +50,30 @@ sh test8.sh
 
 三、实验二
 
-python ./test_ml.py
+将实验一最好的结果复制
+
+cp -r ./traindata/test3 ./traindata/best
+
+cp -r ./result/test3 ./result/best
+
+gunzip ./result/best/apply/cells/results0.jsonl.gz
+
+将文本数据编码成为语义向量，为机器学习作为输入
+
+python test_ml_embeding.py
+
+机器学习svm实验
+
+python test_ml_svm.py
+
+机器学习randomforest实验
+
+python test_ml_randomforest.py
+
+机器学习knn实验
+
+python test_ml_knn.py
+
+计算实验一方法的文本分类准确率
+
+python test_ml_compare.py
