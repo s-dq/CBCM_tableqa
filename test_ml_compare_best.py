@@ -1,5 +1,10 @@
 import json
 
+import sys
+
+# Redirect stdout to a file
+sys.stdout = open("./results/output.txt", "w")
+                  
 def read_jsonl(file_path):
     data = []
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -24,3 +29,5 @@ for i in range(len(pred_file)):
         else:
             continue
 print('文本分类准确率：',right/(right+wrong))
+sys.stdout.close()
+sys.stdout = sys.__stdout__
