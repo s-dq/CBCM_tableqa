@@ -5,7 +5,7 @@ from collections import defaultdict
 import sys
 
 # Redirect standard output to a file
-sys.stdout = open("./results/output.txt", "a")
+sys.stdout = open("./result/output.txt", "a")
 
 def log_softmax(x):
     e_x = np.exp(x - np.max(x))
