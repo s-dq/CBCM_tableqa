@@ -5,7 +5,7 @@ from collections import defaultdict
 import sys
 
 # Redirect stdout to a file
-sys.stdout = open("./results/output.txt", "a")
+sys.stdout = open("./result/output.txt", "a")
 def read_jsonl(file_path):
     data = []
     with open(file_path, 'r', encoding='utf-8') as f:
