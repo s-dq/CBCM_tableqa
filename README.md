@@ -1,5 +1,25 @@
 一、数据准备
 
+1.1环境
+
+创建虚拟环境
+
+python3 -m venv venv
+
+激活虚拟环境
+
+source venv/bin/activate
+
+安装
+
+pip install jsonlines==4.0.0
+
+pip install ujson==5.10.0
+
+python -m pip install paddlepaddle-gpu==2.6.2.post116 -i https://www.paddlepaddle.org.cn/packages/stable/cu116/
+
+pip install paddlenlp
+
 1.1下载
 
 下载IM-TQA-main.zip
