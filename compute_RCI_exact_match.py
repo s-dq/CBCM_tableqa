@@ -2,7 +2,10 @@ from util.line_corpus import write_open, jsonl_lines
 import ujson as json
 import numpy as np
 from collections import defaultdict
+import sys
 
+# Redirect standard output to a file
+sys.stdout = open("./results/output.txt", "a")
 
 def log_softmax(x):
     e_x = np.exp(x - np.max(x))
@@ -146,3 +149,5 @@ print(f"exact match score on single_cell tables:",
 print(f"exact match score on single_line tables:",
       single_line_right_num / (single_line_right_num + single_line_wrong_num))
 print(f"exact match score on multi_line tables:", multi_line_right_num / (multi_line_right_num + multi_line_wrong_num))
+sys.stdout.close()
+sys.stdout = sys.__stdout__
