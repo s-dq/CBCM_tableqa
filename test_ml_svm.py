@@ -2,6 +2,11 @@ import json
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 from collections import defaultdict
+import sys
+
+# Redirect stdout to a file
+sys.stdout = open("./results/output.txt", "a")
+
 def read_jsonl(file_path):
     data = []
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -114,3 +119,6 @@ for q_id in q_id_to_test_questions:
     test_pred_results.append(item)
 
 print("total exact match score: ", total_exact_match / total_question_num)
+
+sys.stdout.close()
+sys.stdout = sys.__stdout__
