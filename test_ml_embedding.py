@@ -715,7 +715,7 @@ class SeqPairArgs(SeqPairHypers):
 
 args = SeqPairArgs()
 
-
+logger = logging.getLogger(__name__)
 
 # 加载模型
 model = ErnieForSequenceClassification.from_pretrained('ernie-1.0-base-zh',num_classes=2)
