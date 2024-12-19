@@ -80,7 +80,7 @@ gunzip ./result/best/apply/cells/results0.jsonl.gz
 
 将文本数据编码成为语义向量，为机器学习作为输入
 
-python test_ml_embeding.py
+python test_ml_embedding.py
 
 机器学习svm实验
 
