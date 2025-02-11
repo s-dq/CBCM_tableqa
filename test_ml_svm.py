@@ -32,11 +32,11 @@ for i in range(len(test)) :
     test_y.append(test[i]['lable'][0])
     test_id.append(test[i]['id'][0])
 
-clf = SVC(kernel='linear')  # 可选的核函数为 'linear', 'poly', 'rbf', 'sigmoid' 等
+clf = SVC(kernel='linear')
 clf.fit(train_x, train_y)
 pred_y = clf.predict(test_x)
 accuracy = accuracy_score(pred_y, test_y)
-print(f"单元格判断准确率是: {accuracy * 100:.2f}%")
+print(f"The accuracy of cell judgment is: {accuracy * 100:.2f}%")
 
 
 def gather_predictions(pred_file,test_id, intent=0):
