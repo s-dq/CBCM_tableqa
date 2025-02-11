@@ -9,7 +9,7 @@ paddlenlp==2.8.1
 ## 2. Data preprocessing
 ### (1)download IM-TQA-main.zip:
 '''
-wget https://github.com/SpursGoZmy/IM-TQA/archive/refs/heads/main.zip
+# wget https://github.com/SpursGoZmy/IM-TQA/archive/refs/heads/main.zip
 '''
 ### (2)unzip main.zip:
 unzip main.zip
