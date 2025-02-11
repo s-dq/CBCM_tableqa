@@ -4,7 +4,6 @@ import json
 import os
 
 
-# 保存json文件为RCI模型训练需要的.gz压缩文件
 def jsonl_to_gz(jsonl_file, gz_file):
     with jsonlines.open(jsonl_file, 'r') as reader:
         with gzip.open(gz_file, 'wt') as writer:
@@ -14,7 +13,7 @@ def jsonl_to_gz(jsonl_file, gz_file):
 
 
 def data_to_traindata(testnum):
-    # 把表格变成一个文本的列表，列表中的每个元素是每个单元格的行和列全部文本
+    # Turn the table into a list of text, where each element in the list is the entire text of each cell's row and column
     def table_to_list_1(table):
         table_text = []
         number = table['cell_ID_matrix']
@@ -110,7 +109,6 @@ def data_to_traindata(testnum):
                 table_text.append(text)
         return table_text
 
-    # 根据问题中的table_id找到表格
     def found_table(table_id, table_list):
         for i in range(len(table_list)):
             if table_list[i]['table_id'] == table_id:
@@ -129,9 +127,7 @@ def data_to_traindata(testnum):
             table_list = json.load(file)
         with open('./newdata/' + dataset + '_questions.json', 'r', encoding='utf-8') as file:
             qa_list = json.load(file)
-        # 单元格结果
         cell_result = []
-        # 遍历全部问题的列表
         for i in range(len(qa_list)):
             qa = qa_list[i]
             table = found_table(qa['table_id'], table_list)
@@ -143,25 +139,25 @@ def data_to_traindata(testnum):
                 table_text_list = table_to_list_3(table)
             if testnum == 4 or testnum == 8:
                 table_text_list = table_to_list_4(table)
-            # 将表格标注变成一维数组
+            # Convert table annotations into a one-dimensional array
             turth = [element for sublist in table['cell_ID_matrix'] for element in sublist]
-            # 找到全部答案在一维数组的位置
+            # Find the position of all answers in a one-dimensional array
             answer_list = []
             for j in range(len(qa['answer_cell_list'])):
                 answer_list = answer_list + get_index_list(qa['answer_cell_list'][j], turth)
-            # 遍历需要处理的每一行
+            # Iterate over each row that needs to be processed
             for j in range(len(table_text_list)):
                 # id
                 id = qa['question_id'] + ':' + str(j)
-                # taxt_a：问题
+                # taxt_a：
                 text_a = qa['chinese_question']
-                # label：检查答案是否在这一行
+                # label：
                 label = False
                 if j in answer_list:
                     label = True
-                # text_b：行和列上全部的文本组成
+                # text_b：
                 text_b = table_text_list[j]
-                # question_type:问题的类型
+                # question_type:
                 question_type = 0
                 if qa['question_type'] == 'single_cell':
                     question_type = 1
