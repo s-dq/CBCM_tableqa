@@ -1,11 +1,9 @@
-# 根据新建的数据集重新得到rgcnrci的训练测试集
 import jsonlines
 import gzip
 import json
 import os
 
 
-# 保存json文件为RCI模型训练需要的.gz压缩文件
 def jsonl_to_gz(jsonl_file, gz_file):
     with jsonlines.open(jsonl_file, 'r') as reader:
         with gzip.open(gz_file, 'wt') as writer:
@@ -39,10 +37,8 @@ test_tables_id = []
 for i in range(len(test_tables)):
     test_tables_id.append(test_tables[i]['table_id'])
 
-# 找到id对应的表格并改到测试集
 test_cols = test_cols + [t for t in train_cols if t['id'].split('_')[0] in test_tables_id]
 test_rows = test_rows + [t for t in train_rows if t['id'].split('_')[0] in test_tables_id]
-# 删掉训练集和测试集id对应的表格
 train_cols = [t for t in train_cols if t['id'].split('_')[0] not in test_tables_id]
 train_rows = [t for t in train_rows if t['id'].split('_')[0] not in test_tables_id]
 
