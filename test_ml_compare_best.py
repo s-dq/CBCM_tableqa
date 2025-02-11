@@ -31,6 +31,6 @@ for i in range(len(pred_file)):
                 break
         else:
             continue
-print('文本分类准确率：',right/(right+wrong))
+print('Text classification accuracy: ',right/(right+wrong))
 sys.stdout.close()
 sys.stdout = sys.__stdout__
