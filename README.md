@@ -5,7 +5,11 @@ jsonlines==4.0.0
 ujson==5.10.0
 paddlepaddle-gpu==2.6.2
 paddlenlp==2.8.1
+```
 
+# 代码部分
+
+```
 ## 2. Data preprocessing
 ### (1)download IM-TQA-main.zip:
 '''
