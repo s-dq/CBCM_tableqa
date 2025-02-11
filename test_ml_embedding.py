@@ -717,45 +717,39 @@ args = SeqPairArgs()
 
 logger = logging.getLogger(__name__)
 
-# 加载模型
 model = ErnieForSequenceClassification.from_pretrained('ernie-1.0-base-zh',num_classes=2)
 tokenizer = ErnieTokenizer.from_pretrained('ernie-1.0-base-zh')
 tokenizer.add_special_tokens({'additional_special_tokens': ['*']})
 test_input = tokenizer("*")
 assert test_input['input_ids'][1] != tokenizer.unk_token_id
-# 加载训练数据
 train_dataloader = SeqPairDataloader(args, 1, tokenizer, './traindata/best/train_cells.jsonl.gz',json_mapper=standard_json_mapper)
-# 数据内容：ids,input_ids_batch,token_type_ids_batch,labels=batch
 train_data=list(train_dataloader)
-# 加载测试数据
 test_dataloader = SeqPairDataloader(args, 1, tokenizer, './traindata/best/test_cells.jsonl.gz',json_mapper=standard_json_mapper)
 test_data=list(test_dataloader)
 
-# 设置设备为 GPU 或 CPU
 device = paddle.set_device("gpu" if paddle.is_compiled_with_cuda() else "cpu")
 model = model.to(device)
 if not os.path.exists('./traindata/test_ml'):
     os.makedirs('./traindata/test_ml')
-# 打开 JSON 文件进行写入
 with open('./traindata/test_ml/train.jsonl', 'w') as train_file, open('./traindata/test_ml/test.jsonl', 'w') as test_file:
-    # 处理训练数据并逐个保存到 JSON 文件
-    for i in tqdm(range(len(train_data)), desc="正在处理训练数据"):
+    
+    for i in tqdm(range(len(train_data)), desc="process train data"):
         embedding = model(train_data[i][1], train_data[i][2])[0]
         lable = train_data[i][3]
         id=train_data[i][0]
-        embedding = embedding.cpu().numpy().tolist()  # 转换为 numpy 数组再转为 list
-        lable = lable.cpu().numpy().tolist()  # 同样处理 y_train
+        embedding = embedding.cpu().numpy().tolist()  
+        lable = lable.cpu().numpy().tolist()  
         json.dump({'id':id,'embedding':embedding,'lable':lable}, train_file)
-        train_file.write("\n")  # 在每个条目之间添加换行符
+        train_file.write("\n") 
 
-    # 处理测试数据并逐个保存到 JSON 文件
-    for i in tqdm(range(len(test_data)), desc="正在处理测试数据"):
+    
+    for i in tqdm(range(len(test_data)), desc="process test data"):
         embedding = model(test_data[i][1], test_data[i][2])[0]
         lable = test_data[i][3]
         id=test_data[i][0]
-        embedding = embedding.cpu().numpy().tolist()  # 转换为 numpy 数组再转为 list
-        lable = lable.cpu().numpy().tolist()  # 同样处理 y_test
+        embedding = embedding.cpu().numpy().tolist() 
+        lable = lable.cpu().numpy().tolist() 
         json.dump({'id':id,'embedding':embedding,'lable':lable}, test_file)
-        test_file.write("\n")  # 在每个条目之间添加换行符
+        test_file.write("\n") 
 
 
