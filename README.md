@@ -1,5 +1,6 @@
-一、IM-TQA-x benchmark dataset
-1、IM-TQA数据集来源及简介：https://github.com/SpursGoZmy/IM-TQA
+# 1 IM-TQA-x benchmark dataset
+## (1) IM-TQA数据集来源及简介：https://github.com/SpursGoZmy/IM-TQA[GitHub](https://github.com/SpursGoZmy/IM-TQA)
+
 原数据集中存在的定义
 ![image](https://github.com/user-attachments/assets/86bde8b2-1662-4791-ae08-81445beb4459)
 
@@ -27,13 +28,24 @@ Pure Data: Pure data cells are the core body of a table. They do not have the fu
 (1)find all complex multi-line cell recall questions by applying the R1 rule
 (2)identify all the related tables and all the questions on those tables (one table with about four questions).
 (3)Organize all the CQ tables and questions into the test set
-
+最终的数据集在文件夹IM中
 4、IM-TQA-x benchmark 统计
 ![image](https://github.com/user-attachments/assets/57d6aa8f-247b-4012-8a87-5596044aad2b)
 
-二、单元格语义表征实验
+二、实验
+1、表格问答整体的流程
 
+2、单元格语义表征实验
+我们以图1中的表格举例说明不同的单元格语义表征方法，使用到的单元格为
+方法一表示为：
+单元格分类
+结果：
+![image](https://github.com/user-attachments/assets/e23e2ae6-b4be-4b71-8afd-d368a5fed08f)
 
-三、文本二分类方法实验
+3、文本二分类方法实验：
+我们使用单元格语义表征实验中最佳的方法，使用不同的机器学习方法进行对比
+结果：
+![image](https://github.com/user-attachments/assets/794b2890-b12c-4ee5-8abf-70abeec0ade8)
+
 
 
