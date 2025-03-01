@@ -95,6 +95,11 @@ The following figure shows the experimental results. Text classification accurac
 
 ![image](https://github.com/user-attachments/assets/794b2890-b12c-4ee5-8abf-70abeec0ade8)
 
+
+
+# Reference
+
+```
 @inproceedings{zheng-etal-2023-im,
     title = "{IM}-{TQA}: A {C}hinese Table Question Answering Dataset with Implicit and Multi-type Table Structures",
     author = "Zheng, Mingyu  and
@@ -113,4 +118,4 @@ The following figure shows the experimental results. Text classification accurac
     doi = "10.18653/v1/2023.acl-long.278",
     pages = "5074--5094",
 }
-
+```
