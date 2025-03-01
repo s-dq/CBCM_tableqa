@@ -1,6 +1,6 @@
 # 1 IM-TQA-x benchmark dataset
 
-## (1) Source and Introduction of IM-TQA Dataset
+## (1)Source and Introduction of IM-TQA Dataset
 
 https://github.com/SpursGoZmy/IM-TQA
 
@@ -28,8 +28,6 @@ Pure Data: Pure data cells are the core body of a table. They do not have the fu
 
 ### Question classification in table question answering
 
-![image](https://github.com/user-attachments/assets/8a331450-86a9-4533-a01c-c5823276b1ce)
-
 Based on the original data set, we defined the distribution type of question answers，all examples are given in the figure.
 
 Single Cell Query: The answer to the question consists of a single cell.
@@ -37,6 +35,8 @@ Single Cell Query: The answer to the question consists of a single cell.
 Single Line Query: The answer to the question consists of multiple cells in a single row or column.
 
 Multi-Line Query: The answer to the question appears in positions of more than one row and more than one column.
+
+![image](https://github.com/user-attachments/assets/8a331450-86a9-4533-a01c-c5823276b1ce)
 
 ## (3)Constructing IM-TQA-x benchmark dataset
 
@@ -66,7 +66,12 @@ Organize those tables and questions into the test set
 
 The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
-4、IM-TQA-x benchmark statistics
+## (4)IM-TQA-x benchmark statistics
+
+ |train table|train question|test table|test question
+---| ---| ---| ---| ---
+total|907|3771|183|768
+
 
 ![image](https://github.com/user-attachments/assets/57d6aa8f-247b-4012-8a87-5596044aad2b)
 
