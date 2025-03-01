@@ -48,9 +48,17 @@ The type of questions in the training set does not affect the training results
 
 ### IM-TQA-x benchmark dataset construction steps
 
-find all complex multi-line cell recall questions by applying the R1 rule
+find all complex multi-line cell recall questions by applying the R1 rule (Questions that meet this rule can only be answered using the cell matching method, not the row and column matching method)
 
-![image](https://github.com/user-attachments/assets/14b62b05-81a0-4fb6-b899-d41ef10d1319)
+R1: ∀(i,j) ∈ {(r, c)},
+
+∃(i, k) ∈ A ∧ ∃(m,j) ∈ A | i ≠ m, k ≠ j
+
+R1 ⟹ (i,j) ∈ A
+
+Where:
+
+{(r, c)} is a table, r is the row index, c is the column index. (i,j) is a table cell with i(th) row and j(th) column. A is the answer table cell set.
 
 identify all the related tables and all the questions on those tables (one table with about four questions).
 
