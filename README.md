@@ -2,7 +2,7 @@
 
 ## (1) Source and Introduction of IM-TQA Dataset
 
-1. https://github.com/SpursGoZmy/IM-TQA
+https://github.com/SpursGoZmy/IM-TQA
 
 ## (2) Dataset Description
 
