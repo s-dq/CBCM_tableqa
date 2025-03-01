@@ -71,18 +71,15 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 | |train table|train question|test table|test question|
 |---| ---| ---| ---| ---|
 |total|907|3771|183|768|
-|aaa|
-|total|907|3771|183|768|
-|total|907|3771|183|768|
-|total|907|3771|183|768|
-|total|907|3771|183|768|
-|aaa|
-|total|907|3771|183|768|
-|total|907|3771|183|768|
-|total|907|3771|183|768|
-
-
-![image](https://github.com/user-attachments/assets/57d6aa8f-247b-4012-8a87-5596044aad2b)
+|Classification by table type:|
+|Complex Table|223|1014|66|306|
+|Vertical Table|224|849|45|174|
+|Horizontal Table|229|933|38|129|
+|Hierarchical Table|231|1075|34|159|
+|Classification by question type:|
+|Single cell query| |2112| |404|
+|Single Line Query| |1630| |317|
+|Multi-Line Query| |29| |47|
 
 # 2 Experiment
 
@@ -94,7 +91,10 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
 The following figure shows the experimental results. The indicator is the accuracy of question answering
 
-![image](https://github.com/user-attachments/assets/e23e2ae6-b4be-4b71-8afd-d368a5fed08f)
+|Experiments|Overall accuracy|Complex Table|Vertical Table|Horizontal Table|Hierarchical Table|Single cell query|Single Line Query|Multi-Line Query|
+|---| ---| ---| ---| ---|---| ---| ---| ---|
+|1|2|3|4|5|6|7|8|9|
+
 
 Experiments 1 to 4 used different cell semantic representation methods, respectively:
 
