@@ -16,7 +16,7 @@ Horizontal Table: Table data is arranged in the horizontal direction, with the f
 
 Hierarchical Table: Table data is arranged in both vertical and horizontal directions, with headers exhibiting a multi-level hierarchical structure.
 
-Complex Table: In tables of above 3 types, header cells only locate on the top or left side of the table. But in complex tables, headers also appear at other positions such as bottom-right region in the table and can be mixed with data cells. Such tabular structures with flexible header locations often appear in professional equipment specifications and record sheets, presenting a great challenge to existing methods.
+Complex Table: In tables of above 3 types, header cells only locate on the top or left side of the table. But in complex tables, headers also appear at other positions such as bottom-right region in the table and can be mixed with data cells. 
 
 ### Cell type classification in table question answering
 
