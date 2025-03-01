@@ -81,7 +81,7 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
 # 2 Experiment
 
-## (1) Steps to implement form question and answer
+## (1) Table question answering algorithm process
 
 ![image](https://github.com/user-attachments/assets/2251d4df-6ec3-4596-98a8-babd335539fd)
 
