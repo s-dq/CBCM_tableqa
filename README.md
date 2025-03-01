@@ -77,9 +77,9 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 |Horizontal Table|229|933|38|129|
 |Hierarchical Table|231|1075|34|159|
 |Classification by question type:|
-|Single cell query| |2112| |404|
-|Single Line Query| |1630| |317|
-|Multi-Line Query| |29| |47|
+|Single cell query|-|2112|-|404|
+|Single Line Query|-|1630|-|317|
+|Multi-Line Query|-|29|-|47|
 
 # 2 Experiment
 
@@ -93,8 +93,14 @@ The following figure shows the experimental results. The indicator is the accura
 
 |Experiments|Overall accuracy|Complex Table|Vertical Table|Horizontal Table|Hierarchical Table|Single cell query|Single Line Query|Multi-Line Query|
 |---| ---| ---| ---| ---|---| ---| ---| ---|
-|1|2|3|4|5|6|7|8|9|
-
+| 1 | 40.4% | 19.9% | 62.6% | 46.5% | 50.3% | 46.3% | 37.5% | 8.5%  |
+| 2 | 38.3% | 18.6% | 56.3% | 50.4% | 46.5% | 43.1% | 36.3% | 10.6% |
+| 3 | 50.5% | 45.4% | 59.8% | 58.2% | 44.0% | 55.9% | 46.1% | 34.0% |
+| 4 | 48.3% | 44.1% | 58.0% | 54.3% | 40.9% | 54.5% | 43.2% | 29.8% |
+| 5 | 38.9% | 16.3% | 62.1% | 49.6% | 48.4% | 45.8% | 35.6% | 2.1%  |
+| 6 | 41.7% | 24.2% | 56.9% | 51.2% | 50.9% | 49.0% | 37.5% | 6.4%  |
+| 7 | 49.3% | 41.2% | 60.9% | 58.9% | 44.7% | 55.7% | 44.8% | 25.5% |
+| 8 | 49.1% | 41.5% | 57.5% | 55.8% | 49.1% | 55.4% | 44.5% | 25.5% |
 
 Experiments 1 to 4 used different cell semantic representation methods, respectively:
 
@@ -115,9 +121,12 @@ And the question and answer text concatenation order is: Question text + Cell se
 
 The following figure shows the experimental results. Text classification accuracy is the accuracy of a cell being judged correctly, and Table question answering accuracy is the accuracy of the entire table cell being judged correctly
 
-![image](https://github.com/user-attachments/assets/794b2890-b12c-4ee5-8abf-70abeec0ade8)
-
-
+| Text binary classification method | Text classification accuracy | Table question answering accuracy |
+|--|--|--|
+| SVM               | 71.72% | 1.69%  |
+| Random forest     | 78.8%  | 2.21%  |
+| k nearest neighbor | 81.64% | 3.25%  |
+| Linear classifier | 97%    | 49%    |
 
 # Reference
 
