@@ -1,4 +1,8 @@
-# 1 IM-TQA-x benchmark dataset
+# 1 Abstract
+
+Tables, as a type of structured or semi-structured data, are widely present in various scenarios such as documents, reports, and data manuals. Achieving table-based question answering is an important goal in table document analysis and understanding. Currently, there are two main methods for table question answering: the table content matching-based methods and the end-to-end generation method based on encoders and decoders deep neural networks. The matching method returns one or more cells in the table as a result, which can preserve the original data of the table and is more suitable for downstream tasks. After the emergence of LLM (large language model), the end-to-end method has achieved very good results in various benchmark tests. However, the diverse answer content expressions of large models and the excessive dependence on prompt words limit the further application of table question answering in downstream tasks. In this paper, based on the traditional row and column matching method, a cell matching method with a finer query granularity is proposed, named CBCM (Cell-by-cell semantic matching), which improves the accuracy and application range of table question answering based on matching. Based on the public dataset IM-TQA, we build a new benchmark dataset IM-TQA-X, specifically for the multi-row and multi-column cells recall task, which has not been fully considered in current SOTA content matching methods. The overall accuracy rate increased by 2.5% compared with the latest row and column matching method RGCNRCI, and in the multi-row and multi-column cell recall question answering task, the accuracy rate increased significantly from 4.3% to 34%. 
+
+# 2 IM-TQA-x benchmark dataset
 
 ## (1) Source and Introduction of IM-TQA Dataset
 
@@ -79,7 +83,7 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 |Single Line Query|-|1630|-|317|
 |Multi-Line Query|-|29|-|47|
 
-# 2 Experiment
+# 3 Experiment
 
 ## (1) Table question answering algorithm process
 
