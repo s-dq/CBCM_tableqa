@@ -4,7 +4,7 @@
 
 https://github.com/SpursGoZmy/IM-TQA
 
-## (2) Dataset Description
+## (2) Definitions in table questions answers
 
 ![image](https://github.com/user-attachments/assets/86bde8b2-1662-4791-ae08-81445beb4459)
 
@@ -40,7 +40,7 @@ Based on the original data set, we defined the distribution type of question ans
 
 ## (3) Constructing IM-TQA-x benchmark dataset
 
-### We adjust the original dataset for the following reasons:
+### We adjust the original dataset for the following reasons
 
 1. Multi-Line Query type problems are too small in the test set
 
@@ -115,7 +115,7 @@ And the question and answer text concatenation order is: Question text + Cell se
 
 5 to 8 are composed of the same order of cell semantic representation methods and different question-answer text concatenation methods: Cell semantic text + Question text.
 
-## (3) Impact validation of text classification method on question-answering：
+## (3) Impact validation of text classification method on question-answering
 
 The following figure shows the experimental results. Text classification accuracy is the accuracy of a cell being judged correctly, and Table question answering accuracy is the accuracy of the entire table cell being judged correctly
 
