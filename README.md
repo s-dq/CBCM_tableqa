@@ -68,9 +68,9 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
 ## (4)IM-TQA-x benchmark statistics
 
- |train table|train question|test table|test question
----| ---| ---| ---| ---
-total|907|3771|183|768
+| |train table|train question|test table|test question|
+|---| ---| ---| ---| ---|
+|total|907|3771|183|768|
 
 
 ![image](https://github.com/user-attachments/assets/57d6aa8f-247b-4012-8a87-5596044aad2b)
