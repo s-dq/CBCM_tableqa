@@ -1,10 +1,10 @@
 # 1 IM-TQA-x benchmark dataset
 
-## (1)Source and Introduction of IM-TQA Dataset
+## (1) Source and Introduction of IM-TQA Dataset
 
 https://github.com/SpursGoZmy/IM-TQA
 
-## (2)Dataset Description
+## (2) Dataset Description
 
 ![image](https://github.com/user-attachments/assets/86bde8b2-1662-4791-ae08-81445beb4459)
 
@@ -38,7 +38,7 @@ Multi-Line Query: The answer to the question appears in positions of more than o
 
 ![image](https://github.com/user-attachments/assets/8a331450-86a9-4533-a01c-c5823276b1ce)
 
-## (3)Constructing IM-TQA-x benchmark dataset
+## (3) Constructing IM-TQA-x benchmark dataset
 
 ### We adjust the original dataset for the following reasons:
 
@@ -50,9 +50,7 @@ The type of questions in the training set does not affect the training results
 
 find all complex multi-line cell recall questions by applying the R1 rule (Questions that meet this rule can only be answered using the cell matching method, not the row and column matching method)
 
-R1: ∀(i,j) ∈ {(r, c)},
-
-∃(i, k) ∈ A ∧ ∃(m,j) ∈ A | i ≠ m, k ≠ j
+R1: ∀(i,j) ∈ {(r, c)}, ∃(i, k) ∈ A ∧ ∃(m,j) ∈ A | i ≠ m, k ≠ j
 
 R1 ⟹ (i,j) ∈ A
 
@@ -66,7 +64,7 @@ Organize those tables and questions into the test set
 
 The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
-## (4)IM-TQA-x benchmark statistics
+## (4) IM-TQA-x benchmark statistics
 
 | |train table|train question|test table|test question|
 |---| ---| ---| ---| ---|
@@ -83,11 +81,11 @@ The final dataset is in the IM-TQA-X Benchmark Dataset folder
 
 # 2 Experiment
 
-## (1)Steps to implement form question and answer
+## (1) Steps to implement form question and answer
 
 ![image](https://github.com/user-attachments/assets/2251d4df-6ec3-4596-98a8-babd335539fd)
 
-## (2)Impact validation of cell semantic representation method on question-answering
+## (2) Impact validation of cell semantic representation method on question-answering
 
 The following figure shows the experimental results. The indicator is the accuracy of question answering
 
@@ -117,7 +115,7 @@ And the question and answer text concatenation order is: Question text + Cell se
 
 5 to 8 are composed of the same order of cell semantic representation methods and different question-answer text concatenation methods: Cell semantic text + Question text.
 
-## (3)Impact validation of text classification method on question-answering：
+## (3) Impact validation of text classification method on question-answering：
 
 The following figure shows the experimental results. Text classification accuracy is the accuracy of a cell being judged correctly, and Table question answering accuracy is the accuracy of the entire table cell being judged correctly
 
