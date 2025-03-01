@@ -29,7 +29,7 @@ Pure Data: Pure data cells are the core body of a table. They do not have the fu
 (3)Organize all the CQ tables and questions into the test set
 
 4、IM-TQA-x benchmark 统计
-![image](https://github.com/user-attachments/assets/2d3e2be0-bd55-443a-95d6-6b79dd5947f5)
+![image](https://github.com/user-attachments/assets/57d6aa8f-247b-4012-8a87-5596044aad2b)
 
 二、单元格语义表征实验
 
