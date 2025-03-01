@@ -1,5 +1,5 @@
 # 1 IM-TQA-x benchmark dataset
-## (1) IM-TQA数据集来源及简介：https://github.com/SpursGoZmy/IM-TQA[GitHub](https://github.com/SpursGoZmy/IM-TQA)
+## (1) IM-TQA数据集来源及简介：https://github.com/SpursGoZmy/IM-TQA
 
 原数据集中存在的定义
 ![image](https://github.com/user-attachments/assets/86bde8b2-1662-4791-ae08-81445beb4459)
